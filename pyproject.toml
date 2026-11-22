@@ -1,0 +1,27 @@
+[project]
+name = "kacoustics"
+version = "0.1.0"
+description = "Identify keyboard keys from the sound of key presses (replication study)"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "librosa>=0.10",
+    "soundfile>=0.12",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+train = ["torch>=2.3", "torchvision>=0.18"]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
