@@ -19,3 +19,12 @@ This is done on my own keyboard, with my own typing, to understand the attack an
 ## License
 
 MIT
+
+## Setup
+
+```
+uv venv .venv --python 3.12
+uv pip install --python .venv -e ".[dev,train]"
+git config core.hooksPath .githooks     # blocks committing recordings or weights
+.venv/Scripts/python -m pytest -q
+```
