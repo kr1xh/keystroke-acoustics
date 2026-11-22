@@ -1,0 +1,23 @@
+# Recordings and derived data never go in git (they are personal typing audio)
+data/
+results/
+models/
+*.wav
+*.m4a
+*.mp3
+*.aac
+*.ogg
+*.opus
+*.flac
+*.npy
+*.npz
+*.pt
+*.pth
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
