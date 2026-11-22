@@ -48,3 +48,12 @@ data/raw/session-3/...
 ## Write down
 
 For each session note the date, the laptop's power state and anything unusual (a sneeze, a mistyped key) in `data/raw/session-N/notes.txt`. A mistyped key in a file is fine if you note roughly where it happened.
+
+## Check each session
+
+```
+.venv/Scripts/python -m kacoustics.qc data/raw/session-1 --expected 40
+.venv/Scripts/python -m kacoustics.qc data/raw/pilot --expected 5
+```
+
+It prints presses found per key, peak and background-noise levels, and flags clipping (too loud: move the phone back a little) or a count that is off by more than 5% (usually a mistyped key or a noise). Waveform plots with each detected press marked go to `results/qc/<session>/`. Re-record any key that fails.
