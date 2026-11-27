@@ -13,6 +13,6 @@ jobs:
           python-version: "3.12"
       - name: No recordings, data or weights tracked
         run: python scripts/check_data_guard.py --all
-      - run: sudo apt-get install -y ffmpeg
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: pip install -e ".[dev]"
       - run: python -m pytest -q
